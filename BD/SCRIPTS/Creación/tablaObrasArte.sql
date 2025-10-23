@@ -6,6 +6,7 @@ CREATE TABLE ObrasArte (
     categoria VARCHAR(100),
     fecha_creacion DATE,
     imagen_url VARCHAR(300),
-    disponible BIT DEFAULT 1
+    disponibilidad BIT DEFAULT 1
 
 );
+
