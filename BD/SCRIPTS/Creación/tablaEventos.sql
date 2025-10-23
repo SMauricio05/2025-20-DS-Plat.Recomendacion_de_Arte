@@ -1,10 +1,11 @@
 CREATE TABLE Eventos (
     id_evento INT IDENTITY(1,1) PRIMARY KEY,
-    nombre NVARCHAR(200) NOT NULL,
-    descripcion NVARCHAR(MAX),
-    ubicacion NVARCHAR(200),
+    nombre VARCHAR(200) NOT NULL,
+    descripcion VARCHAR(MAX),
+    ubicacion VARCHAR(200),
     fecha_inicio DATE,
     fecha_fin DATE,
-    imagen_url NVARCHAR(300),
+    imagen_url VARCHAR(300),
     activo BIT DEFAULT 1
+
 );
