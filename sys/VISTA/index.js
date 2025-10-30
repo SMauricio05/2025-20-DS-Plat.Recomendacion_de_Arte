@@ -1,1 +1,0 @@
-SYS/VISTA/index.js
