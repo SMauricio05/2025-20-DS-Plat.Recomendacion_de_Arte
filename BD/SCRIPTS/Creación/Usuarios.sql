@@ -1,0 +1,10 @@
+CREATE LOGIN prueba 
+WITH PASSWORD = '12345', 
+CHECK_POLICY = OFF, 
+CHECK_EXPIRATION = OFF;
+GO
+
+USE PlataformaArte;
+CREATE USER prueba FOR LOGIN prueba;
+ALTER ROLE db_owner ADD MEMBER prueba;
+GO
