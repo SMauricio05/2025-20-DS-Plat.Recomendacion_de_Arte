@@ -15,12 +15,12 @@ GO
 
 --INSERTAMOS DATOS
 EXEC sp_InsertarEvento
-    @nombre = 'Festival de M鷖ica',
+    @nombre = 'Festival de M煤sica',
     @descripcion = 'Conciertos y actividades al aire libre',
     @ubicacion = 'Parque Central',
     @fecha_inicio = '2025-12-10',
     @fecha_fin = '2025-12-12',
-    @imagen_url = 'https://example.com/festival.jpg';
+    @imagen_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2kSxuEEFjg7EPsEYOqHA4WiJy0yCEsYZOYQ&s';
 
 
 --2-ACTUALIZAR EVENTOS
@@ -50,20 +50,20 @@ GO
 EXEC sp_ActualizarEvento
     @id_evento = 1,
     @nombre = 'Festival de Jazz',
-    @descripcion = 'Actualizado: nueva programaci髇',
+    @descripcion = 'Actualizado: nueva programaci贸n',
     @ubicacion = 'Parque Central',
     @fecha_inicio = '2025-12-10',
     @fecha_fin = '2025-12-12',
-    @imagen_url = 'https://example.com/jazz.jpg',
+    @imagen_url = 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Nice_Jazz_Festival_2002.jpg',
     @activo = 1;
 	--actualizar evento
 	EXEC sp_InsertarEvento
-    @nombre = 'Festival de M鷖ica',
+    @nombre = 'Festival de M煤sica',
     @descripcion = 'Conciertos y actividades al aire libre',
     @ubicacion = 'Parque Central',
     @fecha_inicio = '2025-12-10',
     @fecha_fin = '2025-12-12',
-    @imagen_url = 'https://example.com/festival.jpg';
+    @imagen_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSBWICvvQlr3bW_k4XLDQFfkjjKSy2ROiwNQ&s';
 
 
 --3-ELIMINAR EVENTOS
@@ -76,7 +76,7 @@ BEGIN
     WHERE id_evento = @id_evento;
 END;
 GO
---Comprobaci髇
+--Comprobaci贸n
 EXEC sp_EliminarEvento @id_evento = 1;
 
 
@@ -108,6 +108,69 @@ GO
 EXEC sp_ObtenerEventoPorId @id_evento = 1;
 EXEC sp_ObtenerEventoPorId @id_evento = 2;
 
+
+
+-- Inserci贸n de 7 eventos de ejemplo
+EXEC sp_InsertarEvento
+    @nombre = 'Festival de M煤sica Andina',
+    @descripcion = 'Celebraci贸n anual de m煤sica tradicional con artistas de todo Jun铆n.',
+    @ubicacion = 'Plaza Constituci贸n, Huancayo',
+    @fecha_inicio = '2025-01-15',
+    @fecha_fin = '2025-01-17',
+    @imagen_url = 'https://cdn.pixabay.com/photo/2016/11/29/04/47/music-1867485_1280.jpg';
+
+EXEC sp_InsertarEvento
+    @nombre = 'Exposici贸n de Arte Contempor谩neo',
+    @descripcion = 'Muestra de artistas emergentes de la regi贸n central del Per煤.',
+    @ubicacion = 'Centro Cultural Huancayo',
+    @fecha_inicio = '2025-02-10',
+    @fecha_fin = '2025-02-28',
+    @imagen_url = 'https://diariocorreo.pe/resizer/v2/FLK3TQOOF5DTNICK4T7X3EBR5Y.png?auth=bd16860ead4ed25caa1301e1a9122c20500b616558e3ccb75ddfc40b64640f38&width=1200&height=675&quality=75&smart=true';
+
+EXEC sp_InsertarEvento
+    @nombre = 'Feria del Libro del Valle del Mantaro',
+    @descripcion = 'Encuentro literario con presentaciones de autores y editoriales locales.',
+    @ubicacion = 'Auditorio Municipal de Huancayo',
+    @fecha_inicio = '2025-03-05',
+    @fecha_fin = '2025-03-10',
+    @imagen_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUz1jMG7KtdT8hJGAOYsAKVrCp97z2KRoVrQ&s';
+
+EXEC sp_InsertarEvento
+    @nombre = 'Festival Gastron贸mico Sabores de la Sierra',
+    @descripcion = 'Evento que promueve la gastronom铆a tradicional de Jun铆n.',
+    @ubicacion = 'Campo Ferial de Huancayo',
+    @fecha_inicio = '2025-04-20',
+    @fecha_fin = '2025-04-22',
+    @imagen_url = 'https://portal.andina.pe/EDPFotografia3/thumbnail/2018/10/17/000539000M.jpg';
+
+EXEC sp_InsertarEvento
+    @nombre = 'Concurso de Danzas T铆picas',
+    @descripcion = 'Competencia entre agrupaciones folcl贸ricas del centro del pa铆s.',
+    @ubicacion = 'Coliseo Wanka, Huancayo',
+    @fecha_inicio = '2025-05-01',
+    @fecha_fin = '2025-05-03',
+    @imagen_url = 'https://portal.andina.pe/EDPfotografia3/Thumbnail/2018/04/29/000499939W.webp';
+
+EXEC sp_InsertarEvento
+    @nombre = 'Exposici贸n de Escultura en Piedra de Huamanga',
+    @descripcion = 'Obras talladas por artistas ayacuchanos, promoviendo el arte ancestral.',
+    @ubicacion = 'Museo Regional de Jun铆n',
+    @fecha_inicio = '2025-06-12',
+    @fecha_fin = '2025-06-25',
+    @imagen_url = 'https://portal.andina.pe/EDPfotografia3/Thumbnail/2019/04/26/000581657W.webp';
+
+EXEC sp_InsertarEvento
+    @nombre = 'Festival del Cuy y Productos Andinos',
+    @descripcion = 'Evento culinario y cultural con exhibiciones gastron贸micas y m煤sica.',
+    @ubicacion = 'Plaza Huamanmarca, Huancayo',
+    @fecha_inicio = '2025-07-10',
+    @fecha_fin = '2025-07-12',
+    @imagen_url = 'https://www.antamina.com/wp-content/uploads/2015/08/festival-cuy.jpg';
+GO
+
+-- Verificar los eventos insertados
+EXEC sp_ObtenerEventos;
+GO
 
 
 
